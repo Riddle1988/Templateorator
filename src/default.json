@@ -1,0 +1,67 @@
+{
+  "directory": ["Example", "TOC Root"],
+  "children": [
+    { "file": ["file_1", "file name_1"] },
+    {
+      "directory": ["folder_1", "folder name 1"],
+      "children": [
+        {
+          "directory": ["subfolder_1", "subfolder name 1"],
+          "children": [
+            {
+              "directory": ["subsubfolder_1"],
+              "children": [
+                { "file": ["file_2", "file name 2"] }
+              ]
+            },
+            {
+              "directory": ["subsubfolder_2", "subsubfolder name 2"],
+              "children": [
+                { "file": ["file_3", "file name 3"] }
+              ]
+            },
+            {
+              "directory": ["subsubfolder_3"],
+              "children": [
+                { "file": ["file_4", "file name 4"] }
+              ]
+            }
+          ]
+        },
+        {
+          "directory": ["subfolder_2", "subfolder name 2"],
+          "children":[
+            {
+              "directory": ["subsubfolder_1", "subsubfolder name 1"],
+              "children": [
+                { "file": ["file_5", "file name 5"] }
+              ]
+            },
+            {
+              "directory": ["subsubfolder_2", "subsubfolder name 2"],
+              "children": [
+                { "file": ["file_6", "file name 6"] },
+                { "file": ["file_7", "file name 7"] }
+              ]
+            },
+            {
+              "directory": ["subsubfolder_3", "subsubfolder name 3"],
+              "children": [
+                { "file": ["file_8", "file name 8"] }
+              ]
+            },
+            {
+              "directory": ["subsubfolder_4", "subsubfolder name 4"],
+              "children":[
+                { "file": ["file_9", "file name 9"] },
+                { "file": ["file_10", "file name 10"] },
+                { "file": ["file_11", "file name 11"] },
+                { "file": ["file_12", "file name 12"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

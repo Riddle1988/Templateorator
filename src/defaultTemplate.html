@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style type="text/css">
+      
+      html 
+        {
+          height: 100%;
+          overflow:hidden
+        }
+
+      body 
+        {
+          margin: 0;
+          height: 100%;
+          font-family: Arial;
+        }
+
+      #main-container 
+        {
+          display: flex;
+          width: 99.5%;
+          height: 98.5%;
+        }
+
+      #sidebar 
+        {
+          display: flex;
+          width: 628px;;
+          padding-top: 10px;
+          vertical-align: none;
+          margin: 1px 0 0 0;
+          text-decoration: none;
+          background-color: #080801bb;   
+          overflow-y:auto;
+          height:100%;
+          resize: horizontal;
+        }
+
+      #sidebar a 
+        {
+          width:auto;
+          display: flex;
+          padding: 10px;
+          color: rgba(255,255,255, 0.75);
+          margin: 15px 0 0 0;
+          text-decoration: none; 
+        }
+
+      #sidebar a:hover 
+        {
+          width:auto;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: white !important;
+        }
+
+      #content 
+        {
+          display: flex;
+          width: 100%;
+          vertical-align: top;
+          padding: 0px 0 0 0px;
+        }
+
+      ul.tree li 
+        {
+          width:auto;
+          list-style-type: none;
+          position: relative;
+        }
+
+      ul.tree li ul 
+        {
+          width:auto;
+          display: none;
+        }
+
+      ul.tree li.open > ul 
+        {
+          width:auto;
+          display: block;
+        }
+
+      ul.tree li > a:not(:last-child):before 
+        {
+          width:auto;
+           content: '+';
+        }
+
+      ul.tree li.open > a:not(:last-child):before 
+        {
+          width:auto;
+          content: '-';
+        }
+
+    </style>
+
+  </head>
+
+  <body>
+    <div id="main-container">
+      <div id="sidebar">
+
+        <ul class="tree">
+            <li>
+                <img src="./img/logo.png" style="width: 230px;height:auto;margin-top: -26px;margin-left:70px">
+            </li>
+{{tree.print_django()}}
+        </ul>
+      </div>
+      <div id="content" style="height: 100%;">
+        <iframe src="./img/Default.htm" name="ContentFrame"  style="width:100%;height:100%" frameborder="1"></iframe>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var tree = document.querySelectorAll('ul.tree a:not(:last-child)');
+      for(var i = 0; i < tree.length; i++){
+        tree[i].addEventListener('click', function(e) {
+          var parent = e.target.parentElement;
+          var classList = parent.classList;
+          if(classList.contains("open")) {
+            classList.remove('open');
+            var opensubs = parent.querySelectorAll(':scope .open');
+            for(var i = 0; i < opensubs.length; i++){
+              opensubs[i].classList.remove('open');
+            }
+          } else {
+            classList.add('open');
+          }
+        });
+      }
+    </script>
+
+  </body>
+</html>
