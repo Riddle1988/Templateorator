@@ -9,6 +9,7 @@ Script can be used to create small static web page with "toc tree" and links. Go
     - python must be installed (Version 3.6.5)
     - read and write privileges must be available in execution folder
     - correct html template must be available (example: defaultTemplate.html)
+    - Jinja2 required, use "pip install Jinja2" to install
 
 ##### Example
     Example contains result of the script run with default settings
